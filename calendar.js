@@ -183,7 +183,7 @@ function runScriptDate() {
             if ( dates[i] == cmpToday ) {
               document.writeln("<div class='calendar__day calendar__day--selected' id='"+sDMyDates+"'>"+ dates[i]+"</div>");	
             } else {
-              document.writeln("<div class='calendar__day' id='"+sDMyDates+"' onclick=\"window.location.href='/dungyees/dungyees.php?date="+sDMyDates+"';\">"+dates[i]+"</div>");
+              document.writeln("<div class='calendar__day' id='"+sDMyDates+"' onclick=\"window.location.href='/unimuseary/index.php?date="+sDMyDates+"';\">"+dates[i]+"</div>");
             }
             i++;
           } else {
@@ -209,7 +209,7 @@ function runScriptDate() {
             if ( sDMyDates == param[0] ) {
               document.writeln("<div class='calendar__day calendar__day--selected' id='"+dates[i]+"'>"+dates[i]+"</div>");	
             } else {
-              document.writeln("<div class='calendar__day' id='"+sDMyDates+"' onclick=\"window.location.href='/dungyees/dungyees.php?date="+sDMyDates+ "';\">"+dates[i]+"</div>");
+              document.writeln("<div class='calendar__day' id='"+sDMyDates+"' onclick=\"window.location.href='/unimuseary/index.php?date="+sDMyDates+ "';\">"+dates[i]+"</div>");
             }
             i++;
           } else {

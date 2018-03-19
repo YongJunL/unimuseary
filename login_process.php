@@ -23,7 +23,7 @@ if(!empty($_POST['id']) && !empty($_POST['pwd'])){
         $_SESSION['password'] = $pwd;
         $_SESSION['row'] = $rowCnt;
 
-        header('Location: ./dungyees.php');
+        header('Location: ./index.php');
         exit;
     }
 }

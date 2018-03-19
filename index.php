@@ -26,9 +26,9 @@
 <head>
   <title>둥이둥이</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="dungyees_css.css" />
+  <link rel="stylesheet" type="text/css" href="main.css" />
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script type="text/javascript" src="dungyees_js.js"></script>
+  <script type="text/javascript" src="calendar.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -159,7 +159,7 @@
         <div class="avatar__img">
           <img src="https://picsum.photos/70" alt="avatar">
         </div>
-        <div class="avatar__name" onclick="window.location.href='/dungyees/logout.php';">Yongjun Lee</div>
+        <div class="avatar__name" onclick="window.location.href='/unimuseary/logout.php';">Yongjun Lee</div>
       </div>
       <nav class="menu">
         <a class="menu__item" href="#">
@@ -206,7 +206,7 @@
         if ( month.length < 2 ) {
           month = "0"+month;
         }
-        location.href = "dungyees.php?date="+year+month+"01";
+        location.href = "index.php?date="+year+month+"01";
       })
 
       //년월 클릭 이벤트
@@ -300,7 +300,7 @@
             console.log(data);
           }
         })
-       /*
+       
        for( var i = 0 ; i < 100000 ; i++ ) {
          //db저장시간 동안 돌아라
         for( var j = 0 ; j < 100 ; j++ ) {
@@ -308,7 +308,7 @@
         }
        }
        window.location.href=window.location.href;
-       */
+       
       })
     })(jQuery)
   </script>

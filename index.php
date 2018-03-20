@@ -159,7 +159,7 @@
         <div class="avatar__img">
           <img src="https://picsum.photos/70" alt="avatar">
         </div>
-        <div class="avatar__name" onclick="window.location.href='/unimuseary/logout.php';">Yongjun Lee</div>
+        <div class="avatar__name" onclick="window.location.href='./logout.php';">Yongjun Lee</div>
       </div>
       <nav class="menu">
         <a class="menu__item" href="#">

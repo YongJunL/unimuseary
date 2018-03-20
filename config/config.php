@@ -3,6 +3,6 @@
     "host" => "localhost", 
     "duser" => "root",
     "dpw" => "381102",
-    "dname" => "dungyees"
+    "dname" => "unimuseary"
   );
 ?>

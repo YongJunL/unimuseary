@@ -4,7 +4,7 @@
   if ( !isset($_SESSION['is_login']) ) {
     header("Location: ./login.html");
   }
-  $timeout = 100;                       // Set timeout minutes 
+  $timeout = 100;                        // Set timeout minutes 
   $logout_redirect_url = "./login.html"; // Set logout URL 
   $timeout = $timeout*60;                // Converts minutes to seconds 
   if ( isset($_SESSION['start_time']) ) { 

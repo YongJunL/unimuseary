@@ -185,7 +185,6 @@ sidebar {
 /* ------------------------------------------------------------ 
     MAIN(3 Layer)
    ------------------------------------------------------------ */
-/* MAIN */
 .toolbar{
   display: flex;
   justify-content: space-between;
@@ -281,6 +280,9 @@ sidebar {
   cursor: pointer;
 }
 /* toolbar(4 Layer) ------------------------------------------- */
+/* ------------------------------------------------------------ 
+    calendar(4 Layer)
+   ------------------------------------------------------------ */
 .calendar__week,
 .calendar__header {
   display: grid;
@@ -304,18 +306,7 @@ sidebar {
 .calendar__day--selected {
   padding: 16px;
 }
-
-
-
 /* COSMETIC STYLING */
-
-
-
-
-
-
-
-
 .calendar__header > div {
   text-transform: uppercase;
   font-size: 0.8em;
@@ -349,10 +340,10 @@ sidebar {
 .calendar__exday:last-child {
   border-right: 0;
 }
-
-
-/* schedule */
-
+/* calendar(4 Layer) ------------------------------------------- */
+/* ------------------------------------------------------------ 
+    schedule(4 Layer)
+   ------------------------------------------------------------ */
 .schedule__header {
   display: grid;
   grid-template-columns: repeat(7, 1fr); 
@@ -386,6 +377,6 @@ sidebar {
 .schedule__check:last-child {
   border-bottom: 0px;
 }
-
+/* schedule(4 Layer) ------------------------------------------- */
 
 

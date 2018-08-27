@@ -83,7 +83,8 @@
       <div class="schedule">
         <div class="schedule__header">
           <div>schedule</div>
-          <div></div><div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div>
+          <div class="schedule__modify">modify</div>
           <div class="schedule__save">save</div>
         </div>
         <?php
@@ -102,14 +103,12 @@
           $year  = substr($dates, 0, 4);
           $month = substr($dates, 4, 2);
           $date  = substr($dates, 6, 2);
-          $sql = "SELECT MAX(cal.year) AS year, MAX(cal.month) AS month, MAX(cal.date) AS date, MAX(cal.type) AS type, MAX(cal.context) AS context "
-                ."FROM tb_calendar AS cal LEFT JOIN tb_user AS user ON cal.user_key=user.user_key "
-                ."WHERE user.id='".$_SESSION['id']."' AND user.password='".$_SESSION['password']."' AND cal.type='event' "
-                ."AND cal.year='".$year."' AND cal.month='".$month."' AND cal.date='".$date."' UNION ALL "
-                ."SELECT MAX(cal.year) AS year, MAX(cal.month) AS month, MAX(cal.date) AS date, MAX(cal.type) AS type, MAX(cal.context) AS context "
-                ."FROM tb_calendar AS cal LEFT JOIN tb_user AS user ON cal.user_key=user.user_key "
-                ."WHERE user.id='".$_SESSION['id']."' AND user.password='".$_SESSION['password']."' AND cal.type='work' " 
-                ."AND cal.year='".$year."' AND cal.month='".$month."' AND cal.date='".$date."' UNION ALL "
+          $sql = "(SELECT cal.year, cal.month, cal.date, cal.type, cal.context FROM tb_calendar AS cal LEFT JOIN tb_user AS user ON cal.user_key=user.user_key "
+                ."WHERE user.id='".$_SESSION['id']."' AND user.password='".$_SESSION['password']."' AND cal.type like 'event%' "
+                ."AND cal.year='".$year."' AND cal.month='".$month."' AND cal.date='".$date."' ORDER BY type) UNION ALL "
+                ."(SELECT cal.year, cal.month, cal.date, cal.type, cal.context FROM tb_calendar AS cal LEFT JOIN tb_user AS user ON cal.user_key=user.user_key "
+                ."WHERE user.id='".$_SESSION['id']."' AND user.password='".$_SESSION['password']."' AND cal.type like 'work%' " 
+                ."AND cal.year='".$year."' AND cal.month='".$month."' AND cal.date='".$date."' ORDER BY type) UNION ALL "
                 ."(SELECT cal.year, cal.month, cal.date, cal.type, cal.context FROM tb_calendar AS cal LEFT JOIN tb_user AS user ON cal.user_key=user.user_key "
                 ."WHERE user.id='".$_SESSION['id']."' AND user.password='".$_SESSION['password']."' AND cal.type like 'check%' "
                 ."AND cal.year='".$year."' AND cal.month='".$month."' AND cal.date='".$date."' ORDER BY type)";
@@ -247,6 +246,15 @@
         $('*').removeClass('calendar__day--selected');
         var divCDId = $this.attr('id');
         $('#'+divCDId).addClass('calendar__day calendar__day--selected');
+      })
+
+      //schedule__modify 클릭 이벤트
+      $('div.schedule__modify').on('click', function() {
+        $this = $(this);
+        $('*').removeClass('calendar__day--selected');
+        //var divCDId = $this.attr('id');
+        //$('#'+divCDId).addClass('calendar__day calendar__day--selected');
+        
       })
 
       //schedule__save 클릭 이벤트

@@ -360,6 +360,12 @@ sidebar {
   font-size: 0.8em;
   cursor: pointer;
 }
+.schedule__modify {
+  color: var(--blue);
+  font-size: 0.8em;
+  text-align: right;
+  cursor: pointer;
+}
 .schedule__special[contenteditable=true] {
   border-bottom: 1px dashed var(---red);
   padding: 3px;
@@ -373,6 +379,12 @@ sidebar {
 .schedule__check[contenteditable=true] {
   border-bottom: 1px dashed var(--gray);
   padding: 3px;
+}
+.schedule__special:last-child {
+  border-bottom: 0px;
+}
+.schedule__work:last-child {
+  border-bottom: 0px;
 }
 .schedule__check:last-child {
   border-bottom: 0px;

@@ -340,7 +340,7 @@ sidebar {
 .calendar__exday:last-child {
   border-right: 0;
 }
-/* calendar(4 Layer) ------------------------------------------- */
+/* calendar(4 Layer) ------------------------------------------ */
 /* ------------------------------------------------------------ 
     schedule(4 Layer)
    ------------------------------------------------------------ */
@@ -361,11 +361,22 @@ sidebar {
   cursor: pointer;
 }
 .schedule__modify {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   color: var(--blue);
   font-size: 0.8em;
   text-align: right;
   cursor: pointer;
 }
+/*
+.schedule__modify__sub {
+  display: grid;
+  color: var(--blue);
+  font-size: 0.8em;
+  /*text-align: right;
+  cursor: pointer;
+}
+*/
 .schedule__special[contenteditable=true] {
   border-bottom: 1px dashed var(---red);
   padding: 3px;

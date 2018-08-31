@@ -84,7 +84,14 @@
         <div class="schedule__header">
           <div>schedule</div>
           <div></div><div></div><div></div><div></div>
-          <div class="schedule__modify">modify</div>
+          <div class="schedule__modify">
+            <select name="job">
+              <option value = "">직업선택</option>
+              <option value = "학생">학생</option>
+              <option value = "회사원">회사원</option>
+            </select>
+            <div class="schedule__modify__sub">modify2</div>
+          </div>
           <div class="schedule__save">save</div>
         </div>
         <?php
